@@ -1,5 +1,5 @@
 import os
-
+import codecs
 
 # Each website is a separate project (folder)
 def create_project_dir(directory):
@@ -46,6 +46,6 @@ def file_to_set(file_name):
 
 # Iterate through a set, each item will be a line in a file
 def set_to_file(links, file_name):
-    with open(file_name,"w") as f:
+    with codecs.open(file_name,"w", encoding='utf-8') as f:
         for l in sorted(links):
             f.write(l+"\n")
